@@ -1,0 +1,32 @@
+@if (product.real) {
+  <div class="card" style="width: 18rem;">
+    @if (product.img) {
+      <img [src]="product.img" class="card-img-top" alt="image">
+    }@else {
+      <img src="https://picsum.photos/200/300" class="card-img-top" alt="image">
+    }
+    <div class="card-body">
+      <h5 class="card-title">{{product.id}}. {{product.nom}}</h5>
+      <p class="card-text">{{product.real}}</p>
+      <p class="card-text">{{product.synopsis}}</p>
+      <p class="card-text">{{product.annee}}</p>
+      <p class="card-text">{{product.details}}</p>
+      <button routerLink="/products/films/{{product.id}}" class="btn btn-primary">Voir</button>
+    </div>
+  </div>
+}@else {
+  <div class="card" style="width: 18rem;">
+    @if (product.img) {
+      <img [src]="product.img" class="card-img-top" alt="image">
+    }@else {
+      <img src="https://picsum.photos/200/300" class="card-img-top" alt="image">
+    }
+    <div class="card-body">
+      <h5 class="card-title">{{product.id}}. {{product.nom}}</h5>
+      <p class="card-text">{{product.artiste}}</p>
+      <p class="card-text">{{product.annee}}</p>
+      <p class="card-text">{{product.details}}</p>
+      <button routerLink="/products/albums/{{product.id}}" class="btn btn-primary">Voir</button>
+    </div>
+  </div>
+}

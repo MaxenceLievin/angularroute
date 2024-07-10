@@ -1,0 +1,24 @@
+@if (product) {
+  <div class="card" style="width: 18rem;">
+    @if (product.img) {
+      <img [src]="product.img" class="card-img-top" alt="image">
+    }@else {
+      <img src="https://picsum.photos/200/300" class="card-img-top" alt="image">
+    }
+    <div class="card-body">
+      <h5 class="card-title">{{product.id}}. {{product.nom}}</h5>
+      @if (product.real) {
+        <p class="card-text">{{product.real}}</p>
+        <p class="card-text">{{product.synopsis}}</p>
+      }@else {
+        <p class="card-text">{{product.artiste}}</p>
+      }
+      <p class="card-text">{{product.annee}}</p>
+      @if (product.details) {
+        <p class="card-text">{{product.details}}</p>
+      }@else {
+        <p>Nous n'avons pas de détails.</p>
+      }
+    </div>
+  </div>
+}
